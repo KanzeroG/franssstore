@@ -17,14 +17,14 @@
         <div class="header">
           <img src="logo.png" alt="Your Logo" class="logo">
         </div>
-        </div>
+    </div>
     <div class="bg-light customForm">
         <h1 class="text-center">Contact</h1>
-        <form class="needs-validation">
+        <form class="needs-validation" novalidate>
             <div class="row g-3">
                 <div class="col-sm-6">
                     <label for="lastname" class="form-label">Last name :</label>
-                    <input type="text" class="form-control" id="lastname">
+                    <input type="text" class="form-control" id="lastname" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-sm-6">
                     <label for="firstname" class="form-label">First name :</label>
-                    <input type="text" class="form-control" id="firstname">
+                    <input type="text" class="form-control" id="firstname" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div>
                     <label class="form-label" for="email">Email :</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" required>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
@@ -54,12 +54,12 @@
                 </div>
                 <div>
                     <label for="message" class="form-label">Message :</label>
-                    <textarea type="text" class="form-control" id="message" rows="5"></textarea>
+                    <textarea type="text" class="form-control" id="message" rows="5" required></textarea>
                     <div class="valid-feedback">
                         Looks good!
                     </div>
                     <div class="invalid-feedback">
-                        minimum 10 characters.
+                        Minimum 10 characters.
                     </div>
                 </div>
                 
@@ -70,16 +70,14 @@
         </form>
     </div>
 
-    <script src="js/contact.js"></script>
-
-    <!-- Email.js -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
-    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function () {
             emailjs.init("JYnhPY_BPJ82fss0e");
         })();
     </script>
+    <script src="js/contact.js"></script>
+
 </body>
 
 </html>

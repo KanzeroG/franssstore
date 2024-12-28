@@ -46,9 +46,20 @@ function showAlert(type, message) {
     alert.classList.add('alert', type, 'fade', 'show', 'text-center');
     alert.setAttribute('role', 'alert');
     alert.innerHTML = message;
-    containerPage.insertBefore(alert, form);
+
+    // Ensure the form is a child of containerPage before inserting the alert
+    if (containerPage.contains(form)) {
+        containerPage.insertBefore(alert, form);
+    } else {
+        // If the form is not found, append the alert to the containerPage
+        containerPage.appendChild(alert);
+    }
+
     setTimeout(() => {
-        document.querySelector('.alert').remove();
+        const existingAlert = document.querySelector('.alert');
+        if (existingAlert) {
+            existingAlert.remove();
+        }
     }, 1000);
 }
 
